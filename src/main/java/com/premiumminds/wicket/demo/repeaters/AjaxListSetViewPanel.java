@@ -2,7 +2,6 @@ package com.premiumminds.wicket.demo.repeaters;
 
 import org.apache.commons.collections4.set.ListOrderedSet;
 import org.apache.wicket.ajax.AjaxChannel;
-import org.apache.wicket.ajax.AjaxChannel.Type;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.attributes.AjaxRequestAttributes;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
