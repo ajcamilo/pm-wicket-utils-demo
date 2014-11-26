@@ -170,5 +170,14 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
+		<repository>
+			<id>premiumminds-nexus-snapshots</id>
+			<name>premiumminds-nexus-snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots </url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+
 	</repositories>
 </project>
