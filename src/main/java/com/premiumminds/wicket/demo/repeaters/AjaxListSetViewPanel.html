@@ -1,0 +1,53 @@
+<wicket:panel>
+	<h2>Table with AjaxListSetView</h2>
+	<p>Ajax request size: <strong id="ajaxListRequestSize">NA</strong> KB</p>
+	<table class="table">
+		<tr wicket:id="ajaxList">
+			<td><input type="text" wicket:id="textfield" /></td>
+			<td>
+				<button class="btn btn-default" wicket:id="remove">Remove</button>
+				<button class="btn btn-default" wicket:id="up">Up</button>
+				<button class="btn btn-default" wicket:id="down">Down</button>
+			</td>
+		</tr>
+	</table>
+	<p class="text-center">
+		<button class="btn btn-default" wicket:id="addTop">Add to top</button>
+		<button class="btn btn-default" wicket:id="addBottom">Add to bottom</button>
+	</p>
+
+	<hr />
+
+	<div>
+	<pre><code class="java">public HomePage(final PageParameters parameters) {
+	super(parameters);
+
+	//add(new Label("version", getApplication().getFrameworkSettings().getVersion()));
+
+	// TODO Add your page's components here
+
+}</code></pre>
+	</div>
+	
+	<p class="text-danger">As of v8.0, Safari exhibits a bug in which
+		resizing your browser horizontally causes rendering errors in the
+		justified nav that are cleared upon refreshing.</p>
+	<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+		tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+		massa justo sit amet risus. Etiam porta sem malesuada magna mollis
+		euismod. Donec sed odio dui.</p>
+	<p>
+		<a class="btn btn-primary" href="#" role="button">View details
+			&raquo;</a>
+	</p>
+	
+	<script>
+		Wicket.Event.subscribe('/ajax/call/complete', 
+			function(jqEvent, attributes, jqXHR, errorThrown, textStatus) {
+				if(attributes.ch.split("|")[0]=="ajaxList"){
+					$("#ajaxListRequestSize").text((jqXHR.responseText.length/1024).toFixed(2));
+				}
+			}
+		);
+	</script>
+</wicket:panel>

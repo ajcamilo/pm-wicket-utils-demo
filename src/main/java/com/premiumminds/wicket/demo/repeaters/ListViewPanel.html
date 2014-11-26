@@ -1,0 +1,28 @@
+<wicket:panel>
+	<h2>Table with ListView</h2>
+	<p>Ajax request size: <strong id="listRequestSize">NA</strong> KB</p>
+	<table class="table" wicket:id="container">
+		<tr wicket:id="list">
+			<td><input type="text" wicket:id="textfield" /></td>
+			<td>
+				<button class="btn btn-default" wicket:id="remove">Remove</button>
+				<button class="btn btn-default" wicket:id="up">Up</button>
+				<button class="btn btn-default" wicket:id="down">Down</button>
+			</td>
+		</tr>
+	</table>
+	<p class="text-center">
+		<button class="btn btn-default" wicket:id="addTop">Add to top</button>
+		<button class="btn btn-default" wicket:id="addBottom">Add to bottom</button>
+	</p>
+	<script>
+		Wicket.Event.subscribe('/ajax/call/complete', 
+			function(jqEvent, attributes, jqXHR, errorThrown, textStatus) {
+				if(attributes.ch.split("|")[0]=="list"){
+					$("#listRequestSize").text((jqXHR.responseText.length/1024).toFixed(2));
+				}
+			}
+		);
+	</script>
+	
+</wicket:panel>
