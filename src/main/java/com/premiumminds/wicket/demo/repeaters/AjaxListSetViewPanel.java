@@ -23,15 +23,18 @@ public class AjaxListSetViewPanel extends Panel {
 	public AjaxListSetViewPanel(String id, int listSize) {
 		super(id);
 		
+		// add dummy elements
 		for(int i=1; i<listSize; i++){
 			list.add("Test "+i);
 		}
 
+		// create the AjaxListSetView
 		ajaxList = new AjaxListSetView<String>("ajaxList", new Model<ListOrderedSet<String>>(list), "tbody"){
 
 			@Override
 			protected void populateItem(final ListSetItem<String> item) {
 				item.add(new TextField<String>("textfield", item.getModel()));
+				// remove button
 				item.add(new Link("remove"){
 
 					@Override
@@ -41,6 +44,7 @@ public class AjaxListSetViewPanel extends Panel {
 					}
 					
 				});
+				// up button
 				item.add(new Link("up"){
 
 					@Override
@@ -52,6 +56,7 @@ public class AjaxListSetViewPanel extends Panel {
 					}
 					
 				});
+				// down button
 				item.add(new Link("down"){
 
 					@Override
@@ -69,7 +74,7 @@ public class AjaxListSetViewPanel extends Panel {
 
 		add(ajaxList);
 		
-		// buttons
+		// add buttons
 		add(new Link("addTop") {
 
 			@Override
@@ -91,6 +96,9 @@ public class AjaxListSetViewPanel extends Panel {
 		
 	}
 
+	/*
+	 * Class used the distinguish ajax requests, so we can show each panel request size.
+	 */
 	private static abstract class Link extends AjaxLink<Void> {
 
 		public Link(String id) {

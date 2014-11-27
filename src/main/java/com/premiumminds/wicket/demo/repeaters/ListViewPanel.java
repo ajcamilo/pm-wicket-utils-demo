@@ -25,15 +25,18 @@ public class ListViewPanel extends Panel {
 	public ListViewPanel(String id, int listSize) {
 		super(id);
 		
+		// add dummy elements
 		for(int i=1; i<listSize; i++){
 			list.add("Test "+i);
 		}
 
+		// create the ListView
 		ListView<String> listView = new ListView<String>("list", Model.ofList(list)) {
 			
 			@Override
 			protected void populateItem(final ListItem<String> item) {
 				item.add(new TextField<String>("textfield", item.getModel()));
+				// remove button
 				item.add(new Link("remove"){
 
 					@Override
@@ -43,6 +46,7 @@ public class ListViewPanel extends Panel {
 					}
 					
 				});
+				// up button
 				item.add(new Link("up"){
 
 					@Override
@@ -54,6 +58,7 @@ public class ListViewPanel extends Panel {
 					}
 					
 				});
+				// down button
 				item.add(new Link("down"){
 
 					@Override
@@ -67,20 +72,18 @@ public class ListViewPanel extends Panel {
 				});
 			}
 		};
+		listView.setReuseItems(true);
+
 		container = new WebMarkupContainer("container");
 		container.add(listView);
-		
-		listView.setReuseItems(true);
-		
 		add(container.setOutputMarkupId(true));
 		
-		// buttons
+		// add buttons
 		add(new Link("addTop") {
 
 			@Override
 			public void onClick(AjaxRequestTarget target) {
 				list.add(0, "Added "+(counter++));
-				
 				target.add(container);
 			}
 		});
@@ -89,13 +92,15 @@ public class ListViewPanel extends Panel {
 			@Override
 			public void onClick(AjaxRequestTarget target) {
 				list.add("Added "+(counter++));
-				
 				target.add(container);
 			}
 		});
 		
 	}
 
+	/*
+	 * Class used the distinguish ajax requests, so we can show each panel request size.
+	 */
 	private static abstract class Link extends AjaxLink<Void> {
 
 		public Link(String id) {
