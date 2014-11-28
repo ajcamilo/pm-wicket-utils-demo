@@ -51,10 +51,12 @@ public class ListViewPanel extends Panel {
 
 					@Override
 					public void onClick(AjaxRequestTarget target) {
-						String value = item.getModelObject();
-						list.remove(item.getIndex());
-						list.add(item.getIndex()-1, value);
-						target.add(container);
+						if(item.getIndex()>0){
+							String value = item.getModelObject();
+							list.remove(item.getIndex());
+							list.add(item.getIndex()-1, value);
+							target.add(container);
+						}
 					}
 					
 				});
@@ -63,10 +65,12 @@ public class ListViewPanel extends Panel {
 
 					@Override
 					public void onClick(AjaxRequestTarget target) {
-						String value = item.getModelObject();
-						list.remove(item.getIndex());
-						list.add(item.getIndex()+1, value);
-						target.add(container);
+						if(item.getIndex()<list.size()-1){
+							String value = item.getModelObject();
+							list.remove(item.getIndex());
+							list.add(item.getIndex()+1, value);
+							target.add(container);
+						}
 					}
 					
 				});

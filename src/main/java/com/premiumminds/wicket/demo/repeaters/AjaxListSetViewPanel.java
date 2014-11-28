@@ -49,10 +49,12 @@ public class AjaxListSetViewPanel extends Panel {
 
 					@Override
 					public void onClick(AjaxRequestTarget target) {
-						int idx = list.indexOf(item.getModelObject());
-						list.remove(item.getModelObject());
-						list.add(idx-1, item.getModelObject());
-						target.add(ajaxList);
+						if(list.indexOf(item.getModelObject())>0){
+							int idx = list.indexOf(item.getModelObject());
+							list.remove(item.getModelObject());
+							list.add(idx-1, item.getModelObject());
+							target.add(ajaxList);
+						}
 					}
 					
 				});
@@ -61,10 +63,12 @@ public class AjaxListSetViewPanel extends Panel {
 
 					@Override
 					public void onClick(AjaxRequestTarget target) {
-						int idx = list.indexOf(item.getModelObject());
-						list.remove(item.getModelObject());
-						list.add(idx+1, item.getModelObject());
-						target.add(ajaxList);
+						if(list.indexOf(item.getModelObject())<list.size()-1){
+							int idx = list.indexOf(item.getModelObject());
+							list.remove(item.getModelObject());
+							list.add(idx+1, item.getModelObject());
+							target.add(ajaxList);
+						}
 					}
 					
 				});
