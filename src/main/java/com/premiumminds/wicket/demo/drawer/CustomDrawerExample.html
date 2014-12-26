@@ -1,0 +1,9 @@
+<wicket:panel>
+	<div class="modal-body">
+		<p>All state of open drawers is maintained on the server side. So you can refresh the page without losing state.</p>
+		<p>Every time a user tries to close the drawer, there's a request to the server-side, so you can disallow the operation. For example, when there's unsaved content</p> 
+		<br />
+		<p><input type="checkbox" wicket:id="close"> <label wicket:for="close">allow this drawer to be closed</label></p>
+		<p><a href="#" wicket:id="open">Open another drawer</a></p>
+	</div>
+</wicket:panel>

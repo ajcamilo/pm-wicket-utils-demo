@@ -27,6 +27,7 @@
     
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     
 </head>
 
@@ -38,39 +39,17 @@
 			<h3 class="text-muted">pm-wicket-utils demo</h3>
 			<div role="navigation">
 				<ul class="nav nav-justified">
-					<li class="active"><a href="#">AjaxListSetView</a></li>
-					<li><a href="#">Other 1</a></li>
-					<li><a href="#">Other 2</a></li>
-					<li><a href="#">Other 3</a></li>
-					<li><a href="#">Other 4</a></li>
+					<li wicket:id="listSetView"><a href="#" wicket:id="link">AjaxListSetView</a></li>
+					<li wicket:id="drawer"><a href="#" wicket:id="link">Drawer</a></li>
 				</ul>
 			</div>
 		</div>
 
-		<!-- Jumbotron -->
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2">
-				<h2 class="text-center">AjaxListSetView demo</h2>
-				<p class="text-center">You can read our documentation on <a href="https://github.com/premium-minds/pm-wicket-utils/wiki/AjaxListSetView">GitHub</a></p>
-			</div>
-		</div>
-
-
-		<!-- Example row of columns -->
-		<div class="row">
-			<div class="col-lg-6" wicket:id="ajaxListView">
-			</div>
-			<div class="col-lg-6" wicket:id="listView">
-			</div>
-		</div>
-		<br />
-		<div class="alert alert-info">
-			<p>To see the differences, try changing some values and modify the lists.</p>
-		</div>
+		<wicket:child />
 
 		<!-- Site footer -->
 		<footer class="footer">
-			<p>&copy; Company 2014</p>
+			<p>checkout the source on <a href="https://github.com/ajcamilo/pm-wicket-utils-demo">github</a></p>
 		</footer>
 
 	</div>
