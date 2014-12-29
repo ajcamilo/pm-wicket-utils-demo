@@ -3,6 +3,7 @@ package com.premiumminds.wicket.demo;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
 
+import com.premiumminds.wicket.demo.bootstrap.BootstrapPaginatorPage;
 import com.premiumminds.wicket.demo.drawer.DrawerPage;
 import com.premiumminds.wicket.demo.repeaters.AjaxListSetViewPage;
 
@@ -33,5 +34,6 @@ public class WicketApplication extends WebApplication
 
 		// add your configuration here
 		mountPage("drawer", DrawerPage.class);
+		mountPage("bootstrap/paginator", BootstrapPaginatorPage.class);
 	}
 }

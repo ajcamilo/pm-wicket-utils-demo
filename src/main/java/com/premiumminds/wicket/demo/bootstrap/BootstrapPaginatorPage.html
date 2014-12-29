@@ -1,0 +1,126 @@
+<wicket:extend>
+
+	<!-- Jumbotron -->
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<h2 class="text-center">BootstrapPaginator demo</h2>
+			<p class="text-center">You can read our documentation on <a href="https://github.com/premium-minds/pm-wicket-utils/wiki/BootstrapPaginator">GitHub</a></p>
+		</div>
+	</div>
+	<br />
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">Change the settings below</div>
+		<div class="panel-body text-center">
+			<nav>
+				<ul class="pagination" wicket:id="paginator"></ul>
+			</nav>
+		</div>
+	</div>	
+
+	<hr />
+	<form class="form-horizontal" wicket:id="form">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">current page</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" wicket:id="currentPage">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">results per page</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" wicket:id="resultsPerPage">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">pages to show</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" wicket:id="pagesToShow">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">total results</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" wicket:id="totalResults">
+			</div>
+		</div>
+  		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+	    		<div class="checkbox">
+					<label>
+						<input type="checkbox" wicket:id="hiddenFirstButton"> hide goto first page button should be hidden when it's not needed
+					</label>
+				</div>
+			</div>
+		</div>
+  		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" wicket:id="hiddenLastButton"> hide goto last page button should be hidden when it's not needed
+					</label>
+				</div>
+			</div>
+		</div>
+  		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" wicket:id="hiddenNextButton"> hide goto next page button should be hidden when it's not needed
+					</label>
+				</div>
+			</div>
+		</div>
+  		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" wicket:id="hiddenPreviousButton"> hide goto previous page button should be hidden when it's not needed
+					</label>
+				</div>
+			</div>
+		</div>
+  		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" wicket:id="showFirstButton"> show the goto first page option
+					</label>
+				</div>
+			</div>
+		</div>
+  		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" wicket:id="showLastButton"> show the goto last page option
+					</label>
+				</div>
+			</div>
+		</div>
+  		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" wicket:id="showNextButton"> show the goto next page option
+					</label>
+				</div>
+			</div>
+		</div>
+  		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" wicket:id="showPreviousButton"> show the goto previous page option
+					</label>
+				</div>
+			</div>
+		</div>
+  		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-default" wicket:id="submit">Update paginator</button>
+			</div>
+		</div>
+  	</form>
+
+</wicket:extend>

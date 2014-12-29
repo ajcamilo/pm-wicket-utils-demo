@@ -5,6 +5,7 @@ import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 
+import com.premiumminds.wicket.demo.bootstrap.BootstrapPaginatorPage;
 import com.premiumminds.wicket.demo.drawer.DrawerPage;
 import com.premiumminds.wicket.demo.repeaters.AjaxListSetViewPage;
 
@@ -14,6 +15,7 @@ public class TemplatePage extends WebPage {
 	public TemplatePage() {
 		add(new Menu("listSetView", AjaxListSetViewPage.class));
 		add(new Menu("drawer", DrawerPage.class));
+		add(new Menu("bootstrapPaginator", BootstrapPaginatorPage.class));
 	}
 
 	public class Menu extends WebMarkupContainer {
